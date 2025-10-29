@@ -4,7 +4,6 @@ export const addUser = async (req, res) => {
   try {
     const { name, tokenCode } = req.body;
 
-    // Check for duplicate token
     const existing = await User.findOne({ tokenCode });
     if (existing) return res.status(400).json({ message: "Token already in use" });
 
