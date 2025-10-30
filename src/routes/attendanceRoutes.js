@@ -1,3 +1,5 @@
+// src/routes/attendanceRoutes.js
+
 import express from "express";
 import {
   markAttendance,
@@ -15,10 +17,10 @@ const router = express.Router();
  * ===========================
  */
 
-// Employee marks attendance using token code
+// Public: Employee marks attendance via token
 router.post("/mark-by-token", markAttendanceByToken);
 
-// Employee views their last 5 attendance records
+// Public: Employee can view their last 5 attendance records
 router.get("/history/:tokenCode", getAttendanceHistoryByToken);
 
 /**
@@ -27,10 +29,10 @@ router.get("/history/:tokenCode", getAttendanceHistoryByToken);
  * ===========================
  */
 
-// Manager can mark attendance manually
+// Manager manually marks attendance (requires login)
 router.post("/mark", protect, markAttendance);
 
-// Manager can view all attendance records
+// Manager views all attendance records
 router.get("/", protect, getAttendance);
 
 export default router;
