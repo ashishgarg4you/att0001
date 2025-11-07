@@ -109,7 +109,8 @@ const allowedOrigins = [
   "http://localhost:5173",              // local dev
   "https://kammmmyour.netlify.app",     // ✅ your Netlify frontend
   "https://att0001.onrender.com",       // ✅ your backend (for internal calls)
-  "https://attend-frontend.onrender.com" // (optional old frontend)
+  "https://attend-frontend.onrender.com", // (optional old frontend)
+  "https://adminhrforyou.netlify.app/"
 ];
 
 // ✅ CORS Configuration
